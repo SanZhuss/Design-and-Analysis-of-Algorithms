@@ -30,4 +30,4 @@ jobs:
         run: python tools/run.py --check
       - name: Submission preparation
         if: always() && github.repository != 'RZhaniya/daa-assignment-3-festival'
-        run: python tools/check_submission.py
+        run: python Assignment3_Sanzhar_Zhussip/tools/check_submission.py
