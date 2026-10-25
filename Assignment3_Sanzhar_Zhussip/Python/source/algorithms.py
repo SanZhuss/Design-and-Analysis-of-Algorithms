@@ -281,3 +281,23 @@ def dag(request):
 
 
     return {"acyclic": acyclic, "distance": dist, "parent_edge": parent_edge}
+
+
+def reconstruct_path(parent, source, target):
+    if parent[target] is None and source != target:
+        return None
+
+    path = []
+    current = target
+
+    while current != source:
+        path.append(current)
+        current = parent[current]
+
+        if current is None:
+            return None
+
+    path.append(source)
+    path.reverse()
+
+    return path
